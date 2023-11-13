@@ -16,18 +16,19 @@
           pname = "oxocarbon-gtk";
           version = "0.0.1";
 
-          src = ./.;
+          src = ./oxocarbon-gtk;
 
           sourceRoot = ".";
 
           propagatedUserEnvPkgs = [ pkgs.gtk-engine-murrine ];
 
-          installPhase = ''
-          runHook preInstall
-          mkdir -p $out/share/themes
-          cp -a ./* $out/share/themes
-          runHook postInstall
-          '';
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out/share/themes
+    cp -a ./oxocarbon-gtk* $out/share/themes
+    runHook postInstall
+    '';
         };
       };
     };
